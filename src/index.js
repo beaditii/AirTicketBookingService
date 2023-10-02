@@ -10,7 +10,7 @@ const setupAndStartServer =()=>{
     app.use(bodyParser.urlencoded({extended: true}));
 
     app.use('/api',apiRoutes);
-    
+
 app.listen(PORT,()=>{
     console.log(`Server started on port ${PORT}`)
 
@@ -21,3 +21,5 @@ app.listen(PORT,()=>{
 }
 
 setupAndStartServer();
+
+//git push origins master for this not origin
