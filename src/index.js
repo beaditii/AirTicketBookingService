@@ -4,9 +4,9 @@ const app=express();
 const {PORT}=require('./config/serverConfig');
 
 const apiRoutes=require('./routes/index');
-const db=require('./model/index');
+const db=require('./models/index');
 const setupAndStartServer =()=>{
-     app.use(bodyparser.json());
+     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
 
     app.use('/api',apiRoutes);
@@ -14,7 +14,7 @@ const setupAndStartServer =()=>{
 app.listen(PORT,()=>{
     console.log(`Server started on port ${PORT}`)
 
-    if(process.env.DB.SYNC){
+    if(process.env.DB_SYNC){
         db.sequelize.sync({alter:true});
     }
 });
